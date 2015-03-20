@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lokasi terminal di kota Bandung</title>
+     <!--[if lt IE 9]>
+            <script src="//cdn.jsdelivr.net/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="list-terminal"></div>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        var data = {
+            resource_id: '061d45f5-026d-4e87-97ed-21bc25fdbe9a'
+        };
+
+        $.ajax({
+            url: 'http://data.go.id/api/action/datastore_search',
+            data: data,
+            dataType: 'jsonp',
+            success: function(data) {
+              alert('Total results found: ' + data.result.total)
+            }
+        });
+    </script>
+</body>
+</html>
