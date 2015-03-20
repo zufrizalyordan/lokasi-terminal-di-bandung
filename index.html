@@ -21,7 +21,12 @@
             data: data,
             dataType: 'jsonp',
             success: function(data) {
-              alert('Total results found: ' + data.result.total)
+                var items = "";
+                $.each(data.result.records, function(i, v){
+                    items += "<li>Nama Terminal: " + v["Nama Terminal"] + "<br><em>Lokasi :" + v["Lokasi (Jalan)"] + "</em></li>";
+                });
+
+                $(".list-terminal").html("<ul>" + items + "</ul>");
             }
         });
     </script>
